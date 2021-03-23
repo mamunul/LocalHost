@@ -1,16 +1,24 @@
 //
 //  ContentView.swift
-//  LocalHost
+//  WebClip
 //
-//  Created by New User on 23/3/21.
+//  Created by Mamunul Mazid on 3/8/21.
 //
 
 import SwiftUI
 
+let presenter = MainPresenter()
+
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        VStack {
+            Button {
+                presenter.openLinkInSafari()
+            } label: {
+                Text("Download From Local Server")
+                    .padding()
+            }
+        }
     }
 }
 
