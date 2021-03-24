@@ -12,6 +12,20 @@ class FileHandler {
 
     init() {
         filePath = getDocumentsDirectory().appendingPathComponent("Sample.text")
+        writeSampleString()
+    }
+
+    func writeSampleString() {
+        let sampleString = "This is sample string."
+
+        let data = sampleString.data(using: String.Encoding.utf8)
+
+        guard let fileUrl = filePath else { return }
+        do {
+            try data?.write(to: fileUrl)
+        } catch {
+            print(error)
+        }
     }
 
     private func getDocumentsDirectory() -> URL {

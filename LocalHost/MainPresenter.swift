@@ -12,12 +12,9 @@ class MainPresenter {
     let localhost = LocalhostManager()
     let fileHandler = FileHandler()
 
-    private var filePath: URL?
-
-
     func openLinkInSafari() {
-        if let path = filePath?.path {
-            localhost.openFileinBrowser(filePath: path)
+        if let path = fileHandler.filePath {
+            localhost.openFileinBrowser(filePath: path.path)
         }
     }
 }
